@@ -19,7 +19,10 @@ Builder.load_string("""
     BoxLayout:
         TextInput:
             id: entry
-            font_size: 32
+            font_name: 'computer'
+            font_size: 80
+            background_color: (0,0,0,1)
+            foreground_color: (0,1,0,1)
             multiline: False
 
     BoxLayout:
@@ -82,6 +85,9 @@ Builder.load_string("""
             on_press: entry.text = ""
         CustButton:
             text: "0"
+            on_press: entry.text += self.text
+        CustButton:
+            text: "."
             on_press: entry.text += self.text
         CustButton:
             background_color: (0,1,0,1) if self.state == 'normal' else (0,0,0,0)
